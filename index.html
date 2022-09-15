@@ -219,13 +219,31 @@
                     <hr class="primary">
                     <p>If you have any questions or comments, give me a call or send me an email and I will get back to you as soon as possible.</p>
                 </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>(+63) 908 2932160</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p>donna.bartolome2008@gmail.com</p>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <form id="portfolio-form" action="https://formspree.io/f/xvollrre" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name: </label>
+                                <input type="name" name="name" placeholder="Name" class="form-field"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email:</label>
+                                <input type="email" name="email" placeholder="Email" class="form-field"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>Message:</label>
+                                <textarea name="message" name="message" cols="40" rows="5" placeholder="Your Message" class="form-field form-field-tall"></textarea>
+    
+                                <button id="form-button" class="btn btn-default btn-xl animate__animated animate__infinite animate__pulse">Submit</button>
+                                <p id="portfolio-form-status"></p>
+                            </div>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -243,6 +261,37 @@
     <script src="js/bootstrap-lightbox.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+    <script>
+        var form = document.getElementById("portfolio-form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("portfolio-form-status");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.innerHTML = "Thank you for reaching out. I will get back to you the soonest.";
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There seems to be a problem submitting your form, please check and try again."
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There seems to be a problem submitting your form, please check and try again.
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
 </body>
 
 </html>

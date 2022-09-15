@@ -154,13 +154,19 @@ header {
     border-radius: 300px;
     text-transform: uppercase;
     font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .btn-default {
-    border-color: #fff;
+    /* border-color: #fff;
     color: #222;
-    background-color: #fff;
+    background-color: #fff; */
+
+    color: #FFFFFF;
+    background: #3994e0;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    text-shadow: none;
     -webkit-animation-iteration-count: 8;
     animation-iteration-count: 8;
     -webkit-animation-iteration-count: calc(var(--animate-repeat)*8);
@@ -493,3 +499,62 @@ header {
 i.red {
     color:#BC0213;
 }
+
+
+#portfolio-form label {
+    display: none;
+}
+  
+#portfolio-form input.form-field, #portfolio-form textarea.form-field {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #222222;
+    background: #fff;
+    border: 1px solid #e5e4e3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+  
+#portfolio-form input.form-field::placeholder, 
+#portfolio-form textarea.form-field::placeholder {
+    color: rgba(170,171,173, .7);
+}
+  
+#portfolio-form input.form-field.form-field-tall {
+    min-height: 400px;
+}
+
+#portfolio-form textarea.form-field.form-field-tall {
+    margin-bottom: 0;
+}
+  
+#portfolio-form input.form-field:focus-visible, #portfolio-form textarea:focus-visible {
+    border: 2px solid rgba(57,148,224, .5);
+    outline: none;
+}
+
+#portfolio-form-status {
+    margin: 25px 0;
+    color: #747474;
+}
+
+/* #form-button {
+    color: #ffffff;
+    background: #3994e0;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+#form-button:hover {
+color: #222222;
+} */
