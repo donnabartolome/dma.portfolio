@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Seaweed+Script');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic');
 
@@ -176,6 +175,8 @@ header {
 .btn-default:focus, .btn-default:hover {
     background-color: #e2e2e2;
     background-position: 0 100px;
+    border: 1px solid #fff;
+    outline: 0;
 }
 
 .btn-xl {

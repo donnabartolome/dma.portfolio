@@ -94,7 +94,7 @@
                         I do the work I do because I love it. I enjoy the challenges, I like the people I meet,
                         and I like the industry. If you’re interested, you can download a copy of my resume and check-out my professional career.
                     </p>
-                    <a href="DonnaMichelleBartolome_Resume.pdf" download class="btn btn-default btn-xl animate__animated animate__tada">
+                    <a href="DonnaMichelleBartolome_Resume.pdf" download class="btn btn-default btn-xl animate__animated animate__repeat-3 animate__tada animate__delay-5">
                         <i class="fa fa-file-pdf-o" style="font-size:20px"></i>
                         Download Resume
                     </a>
@@ -226,11 +226,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Name: </label>
-                                <input type="name" name="name" placeholder="Name" class="form-field"/>
+                                <input type="name" name="name" placeholder="Name" class="form-field" required/>
                             </div>
                             <div class="col-md-6">
                                 <label>Email:</label>
-                                <input type="email" name="email" placeholder="Email" class="form-field"/>
+                                <input type="email" name="email" placeholder="Email" class="form-field" required/>
                             </div>
                         </div>
                         <div class="row">
@@ -238,7 +238,7 @@
                                 <label>Message:</label>
                                 <textarea name="message" name="message" cols="40" rows="5" placeholder="Your Message" class="form-field form-field-tall"></textarea>
     
-                                <button id="form-button" class="btn btn-default btn-xl animate__animated animate__infinite animate__pulse">Submit</button>
+                                <button id="form-button" class="btn btn-default btn-xl animate__animated animate__infinite animate__headShake">Submit</button>
                                 <p id="portfolio-form-status"></p>
                             </div>
                         </div>
@@ -288,7 +288,8 @@
               })
             }
           }).catch(error => {
-            status.innerHTML = "Oops! There seems to be a problem submitting your form, please check and try again.
+            status.innerHTML = "Oops! There seems to be a problem submitting your form, please check and try again."
+          })
         }
         form.addEventListener("submit", handleSubmit)
     </script>
