@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 html,
 body {
@@ -8,13 +7,15 @@ body {
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Work Sans', sans-serif;
 }
 
 hr {
     max-width: 50px;
-    border-color: #3994e0;
     border-width: 3px;
+    border-color: #3994e0;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 hr.light {
@@ -22,37 +23,44 @@ hr.light {
 }
 
 a {
-    color: #f05f40;
+    color: #FFFFFF;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
+    text-decoration: underline;
 }
 
 a:hover,
 a:focus {
-    color: #eb3812;
+    color: #222222;
 }
 
 h1 {
-    font-family: 'Amatic SC', cursive;
-    font-size: 80px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 h2 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 25px;
     font-weight: 300;
 }
 
 h3, h4, h5, h6 {
-    font-family: 'Amatic SC', cursive;
+    /* font-family: 'Amatic SC', cursive; */
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
 }
 
-h3 { font-family: 'Amatic SC', cursive; font-size: 60px; }
+h3 { 
+    font-size: 60px;
+}
 
 p {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
 }
 
@@ -89,7 +97,7 @@ aside {
 
 .navbar-default {
     border-color: rgba(34,34,34,.05);
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Oswald', sans-serif;
     background-color: #fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
@@ -98,8 +106,8 @@ aside {
 
 .navbar-default .navbar-header .navbar-brand {
     text-transform: uppercase;
-    font-family: 'Amatic SC', cursive;
-    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
     color: #3994e0;
 }
 
@@ -108,17 +116,37 @@ aside {
     color: #333;
 }
 
+.navbar-default .nav > li > a {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    text-decoration: none;
+}
+
 .navbar-default .nav > li > a,
 .navbar-default .nav > li > a:focus {
     text-transform: uppercase;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: 200;
     color: #222;
 }
 
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
     color: #3994e0;
+}
+
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    border-color: transparent;
+    background-color: transparent;
+    margin-right: 5px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #3994e0;
+    width: 25px;
+    height: 3px;
 }
 
 header {
@@ -134,6 +162,12 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.header-section {
+    background-image: url(../assets/img/chalk_02.png);
+    background-position: center;
+    background-size: 100%;
 }
 
 .section-heading {
@@ -152,24 +186,19 @@ header {
     border: 0;
     border-radius: 300px;
     text-transform: uppercase;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
 }
 
 .btn-default {
-    /* border-color: #fff;
-    color: #222;
-    background-color: #fff; */
-
     color: #FFFFFF;
     background: #3994e0;
     border: 1px solid #FFFFFF;
     border-radius: 3px;
     text-shadow: none;
-    -webkit-animation-iteration-count: 8;
-    animation-iteration-count: 8;
-    -webkit-animation-iteration-count: calc(var(--animate-repeat)*8);
-    animation-iteration-count: calc(var(--animate-repeat)*8);
+    letter-spacing: 2.5px;
+    transition: .3s;
 }
 
 .btn-default:focus, .btn-default:hover {
@@ -220,7 +249,7 @@ header {
 }
 
 .intro-slider .mouse img {
-    width: 150px;
+    width: 130px;
 }
 
 .scroll {
@@ -236,6 +265,7 @@ header {
 
 /* animation delay */
 .slide-img .chalk {
+    display: none;
     width: 100%;
     animation-delay:0.2s;
     -moz-animation-delay:0.2s;
@@ -275,8 +305,16 @@ header {
 }
 
 @media screen and (min-width: 768px) {
+    h1 {
+        font-size: 80px;
+    }
+
+    .header-section {
+        background-image: none;
+    }
+
     .intro-slider {
-        margin: 25% 0 50%;
+        margin: 25% 0 30%;
     }
 
     .intro-slider .mouse,
@@ -286,6 +324,10 @@ header {
 
     .slide-img {
         margin: 25% 0 0;
+    }
+
+    .slide-img .chalk {
+        display: block;
     }
 }
 
@@ -302,7 +344,12 @@ header {
     }
 
     .intro-slider .mouse {
-        right: -10%;
+        /* right: -10%; */
+        right: -35%;
+    }
+
+    .intro-slider .mouse img {
+        width: 65%;
     }
 
     .slide-img .computer {
@@ -363,8 +410,8 @@ header {
 .box img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    -o-object-fit: cover;
+    object-fit: contain;
+    -o-object-fit: contain;
     border: 1px solid rgba(204,204,204, .5);
 }
 
@@ -405,20 +452,24 @@ header {
 
 .modal-open .portfolio-item button.close {
     position: absolute;
-    width: 25px;
-    height: 25px;
-    background-color: #000;
+    width: 40px;
+    height: 40px;
+    background-color: #3994e0;
     opacity: 1;
     color: #fff;
     z-index: 999;
-    right: -12px;
-    top: -12px;
+    right: -20px;
+    top: -20px;
     border-radius: 50%;
-    font-size: 15px;
-    border: 2px solid #fff;
-    line-height: 25px;
+    border: 1px solid #fff;
+    line-height: 43px;
     -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,0.35);
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.35);
+}
+
+.modal-open .portfolio-item button.close i {
+    font-size: 30px;
+    -webkit-text-stroke: 4px #3994e0;
 }
 
 .modal-open .portfolio-item button.close:focus {
@@ -438,16 +489,16 @@ header {
 
 .portfolio-item .description {
     position: relative;
-    height: 40px;
-    top: -40px;
-    padding: 10px 25px;
-    background-color: rgba(0,0,0,0.5);
+    height: 60px;
+    top: -60px;
+    padding: 20px 25px;
+    background-color: rgba(57,148,224,0.8);
     color: #fff;
     text-align: left;
 }
 
 .portfolio-item .description h4 {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     margin: 0px;
     font-size: 15px;
     font-weight: 300;
@@ -459,7 +510,7 @@ header {
     -moz-transform: scale(0.1);
     -ms-transform: scale(0.1);
     transform: scale(0.1);
-    top: 100px;
+    top: 150px;
     opacity: 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
